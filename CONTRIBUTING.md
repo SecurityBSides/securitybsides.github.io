@@ -29,3 +29,33 @@ ToDo: Write how to set up environment, test, and PR changes for the global org
 > /var/folders/02/5mjm648d0qb9pds9vfl37xmw0000gn/T/yarn--1694998202944-0.17981192331085394/node: line 3: 69903 Segmentation fault: 11 "/Users/luwenth/.nvm/versions/node/v18.17.1/bin/node" "$@"
 
 This usually mans there are some " where there should be ``` in your gatsby-config.js. Check whatever you just added before the segmentation fault started.
+
+## Notes
+
+### Useful Queries:
+
+Top level Event directories:
+
+```graphql
+query MyQuery {
+   allDirectory(filter: { relativeDirectory: { eq: "" } }) {
+      nodes {
+         name
+         sourceInstanceName
+         relativePath
+         relativeDirectory
+         dir
+         base
+      }
+   }
+}
+```
+
+### Page Component
+
+3 things for a Page component (see Part 2):
+
+1. Create the file in /src/pages
+1. Import `import * as React from 'react'`
+1. Define component
+1. Export component
