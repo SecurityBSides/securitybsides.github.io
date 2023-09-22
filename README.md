@@ -2,10 +2,10 @@
 
 Please see the following document to help out:
 
--  [Contributing](Contributing.md)
--  [ToDo](ToDo.md)
+-  [Contributing](./Contributing.md)
+-  [ToDo](./ToDo.md)
 
-ToDo: Craft a real README for the site and repository
+- [] Craft a real README for the site and repository
 
 ---
 
