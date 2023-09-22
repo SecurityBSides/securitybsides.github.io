@@ -1,8 +1,8 @@
 {
-  "name": "securitybsides-gatsby",
+  "name": "SecurityBSides",
   "version": "1.0.0",
   "private": true,
-  "description": "securitybsides-gatsby",
+  "description": "SecurityBSides",
   "author": "rlc4",
   "keywords": [
     "gatsby"
@@ -15,14 +15,20 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.12.4",
-    "gatsby-plugin-google-gtag": "^5.12.0",
     "gatsby-plugin-manifest": "^5.12.0",
     "gatsby-plugin-mdx": "^5.12.0",
     "gatsby-plugin-sitemap": "^6.12.0",
     "gatsby-source-filesystem": "^5.12.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "yarn": "^1.22.19"
   }
 }
