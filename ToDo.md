@@ -5,37 +5,37 @@ to a new site.
 
 ## Pre-migration tasks to be done
 
-- [] Create gh-pages publishing
-- [] Figure out the slugify renaming of the path vs the eventName
+-  [ ] Create gh-pages publishing
+-  [ ] Figure out the slugify renaming of the path vs the eventName
    -  ideally we'd prefer `/events/<eventName>/<year>`
    -  References:
       -  [Gatsby File System Route API](https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/)
       -  [Slugigy used to alter eventName](https://github.com/sindresorhus/slugify)
-- [] Figure out of there's a way to add the year via a parsing of eventDate so we don't have to duplicate
+-  [ ] Figure out of there's a way to add the year via a parsing of eventDate so we don't have to duplicate
    -  References:
       -  [Gatsby File System Route API](https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/)
       -  [gatsby-plugin-mdx]()
       -  [Gatsby Node API]()
-- [] Create a map of all event locations
+-  [ ] Create a map of all event locations
    -  ideally this should be generated from the mdx files using a new frontmatter label
    -  some map generation / geolocation library
       -  [OpenLayers](https://www.npmjs.com/package/ol)
       -  [rlayers](https://www.npmjs.com/package/rlayers)
       -  [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/get-started)
-- [] Create calendar views of upcoming events
+-  [ ] Create calendar views of upcoming events
    -  [] Create a "calendar" style view of BSides events
    -  [] Create an "agenda" style view of all BSides events
-- [] Verify group ownership of CDN - no single person / account points of failure
+-  [ ] Verify group ownership of CDN - no single person / account points of failure
 
-- [] Determine which (if any) events are going to be migrated automatically
+-  [ ] Determine which (if any) events are going to be migrated automatically
    -  See: Event Migration Notes
-- [] Convert main pages for the global organization
-- [] Define and utilize a style w/ navigation
+-  [ ] Convert main pages for the global organization
+-  [ ] Define and utilize a style w/ navigation
    -  Pull style out of index.jsx
-- [] Define file naming conventions and document
-- [] Create documentation for adding an event to the site
-- [] Create documentation for adding global site content
-- [] Create "development" documentation
+-  [ ] Define file naming conventions and document
+-  [ ] Create documentation for adding an event to the site
+-  [ ] Create documentation for adding global site content
+-  [ ] Create "development" documentation
    -  walk through the main principles of the site generator
    -  Any code standards we want to utilize
    -  PR template
@@ -71,9 +71,9 @@ Reference: [Slack File to understand these numbers](https://securitybsides.slack
 
 #### Event Migration notes
 
-- [] Wrap all pbwiki comments in `{/* */}`
-- [] Strip / Replace all `style="..."` with valid MDX (needs to be a JS object)
-- [] Add frontmatter to each file
+-  [] Wrap all pbwiki comments in `{/* */}`
+-  [] Strip / Replace all `style="..."` with valid MDX (needs to be a JS object)
+-  [] Add frontmatter to each file
    -  automate adding values for fields`eventName`, `eventYear`
       -  this can likely come from filenames / filesystem, may also be a huge PITA
    -  automate adding value for `eventDate`
