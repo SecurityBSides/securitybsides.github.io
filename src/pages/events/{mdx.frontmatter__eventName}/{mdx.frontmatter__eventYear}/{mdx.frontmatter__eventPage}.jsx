@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Layout } from "../../../components";
+import { Layout } from "../../../../components";
 
 const EventPage = ({ data, children }) => {
    console.log("EventPage (data): ", data);
@@ -10,6 +10,7 @@ const EventPage = ({ data, children }) => {
       <Layout>
          <h1>
             {data.mdx.frontmatter.eventName} {data.mdx.frontmatter.year}{" "}
+            {data.mdx.frontmatter.eventPage}
          </h1>
          {children}
       </Layout>
@@ -28,6 +29,7 @@ export const eq = graphql`
             eventDate(formatString: "MMMM D, YYYY")
             eventName
             eventYear
+            eventPage
             year: eventDate(formatString: "YYYY")
          }
          id

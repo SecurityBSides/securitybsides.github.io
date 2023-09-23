@@ -1,0 +1,25 @@
+---
+eventName: BSides Example
+eventDate: 2024-12-01
+eventYear: 2024
+eventPage: Problems
+---
+
+import { Link } from "gatsby";
+
+#### Known issues
+
+-  Markdown is classic markdown which does not have the extra sauce from Github Flavored Markdown, we're working on it.
+-  We don't have a "verify" page yet, so you can check the path of the file(s) you've added against what we expect.
+-  The live-reloading development server sometimes doesn't update the cache well. When this happens it's best to restart it after `yarn run clean`
+-  "SyntaxError" after a minor change? Did you add an `import` or remove blank lines? For some Javascript, it needs a blank line before non-javascript content
+
+<hr />
+<ul>
+   <li>
+      <Link to={".."}>Event Page</Link>
+   </li>
+   <li>
+      <Link to={"../tricks"}>Learn: Content Tricks</Link>
+   </li>
+</ul>

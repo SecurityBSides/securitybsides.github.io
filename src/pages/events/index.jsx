@@ -1,33 +1,20 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
+import { Layout } from "../../components";
 
 const Events = ({ data }) => {
+   console.log("Events (data): ", data);
    return (
-      <div>
+      <Layout>
          <h1>
             All Events - eventDate Ordered (most recent / furthest future at the
             top)
          </h1>
          <ul>
             {data.allMdx.nodes.map((node) => {
-               console.log(
-                  "Events node.frontmatter: ",
-                  JSON.stringify(node.frontmatter)
-               );
-               console.log(
-                  "Events node.frontmatter.eventYear: ",
-                  JSON.stringify(node.frontmatter.eventYear)
-               );
                return (
                   <li key={node.id}>
-                     <Link
-                        to={
-                           "/events/" +
-                           node.frontmatter.eventName +
-                           "/" +
-                           node.frontmatter.eventYear
-                        }
-                     >
+                     <Link to={node.url}>
                         {node.frontmatter.eventName} /{" "}
                         {node.frontmatter.eventYear}
                      </Link>
@@ -35,14 +22,19 @@ const Events = ({ data }) => {
                );
             })}
          </ul>
-      </div>
+      </Layout>
    );
 };
 
 export const query = graphql`
    query eventPageQuery {
       allMdx(
-         filter: { frontmatter: { eventName: { nin: ["", null] } } }
+         filter: {
+            frontmatter: {
+               eventName: { nin: ["", null] }
+               eventPage: { eq: null }
+            }
+         }
          sort: { frontmatter: { eventDate: DESC } }
       ) {
          nodes {
@@ -53,6 +45,9 @@ export const query = graphql`
             }
             id
             body
+            url: gatsbyPath(
+               filePath: "/events/{mdx.frontmatter__eventName}/{mdx.frontmatter__eventYear}"
+            )
          }
       }
    }

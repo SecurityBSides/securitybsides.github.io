@@ -1,0 +1,82 @@
+---
+eventName: "BSides Example"
+eventYear: 2024
+eventDate: 2024-12-31
+eventPage:
+---
+
+{/* you can import libraries whenever you need, or at the head (per JSX standard) */}
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMastodon, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "gatsby";
+
+This header was automatically included, no need to make your own.
+It's built from the eventName and eventYear a the top of your event entry.
+See below for more details.
+
+<hr />
+
+## Writing Content
+
+Content is created by making an mdx (markdown + jsx) file in `src/events` with the right headers.
+Conventionally, we'd like to have a directory for each event with a subdirectory for the year.
+You can view this example event file(s) in the repo, to look at the source
+while reading through this, or as a reference to copy for setting up your own event.
+
+<a
+   href="https://github.com/SecurityBSides/securitybsides.github.io/blob/main/src/events/BSides%20Example/BSides%20Example%20Event%202024.mdx"
+   target="_blank"
+>
+   `src/events/BSides Example/2024`
+</a>
+
+To have an event automatically included, you need to have the following at the top of your file (frontmatter):
+
+```yaml
+---
+eventName: "BSides Example"
+eventYear: 2024
+eventDate: 2024-12-31
+---
+```
+
+-  triple hyphens before and after - this separates the frontmatter from the page content, and is mandatory (or your file will be ignored)
+-  eventName - sets the name for your event
+   -  examples: `BSidesSF` or `BSidesLV` or `BSides Kraków`
+-  eventDate - Date of our event, or the start date.
+   -  This must be a single day (will be used in date comparisons for sorting)
+   -  This must be a Javascript parseable date format, otherwise the field will be null
+-  eventYear - Necessary for the year in the path
+   -  Yes, this is duplicate information.
+   -  We're working on figuring a way to compute this from eventDate
+
+Once that is done, you can write your content in JSX or Markdown, and you can intertwine them.
+
+-  external links should use `<a>` tags, with target set to `_blank`
+-  see the page on including images to see examples of imports and ways
+
+The following icons are included via JSX (we are already including FontAwesomeIcon)
+
+<Link to="https://infosec.exchange/@SecurityBSidesGlobal" target="_blank">
+   <FontAwesomeIcon icon={faMastodon} size="xl" />
+</Link>
+<Link href="https://twitter.com/securitybsides" target="_blank">
+   <FontAwesomeIcon icon={faTwitter} size="xl" />
+</Link>
+<hr />
+
+#### Getting Help
+
+Feel free to join slack:#wiki-migration to ask questions or get help.
+We welcome all questions so you can create the content you desire for
+your event.
+
+<hr />
+<ul>
+   <li>
+      <Link to={"./tricks"}>Learn: Content Tricks </Link>
+   </li>
+   <li>
+      <Link to={"./problems"}>Known Problems </Link>
+   </li>
+</ul>

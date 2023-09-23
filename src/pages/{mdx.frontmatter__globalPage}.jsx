@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Layout } from "../../../components";
+import { Layout } from "../components";
 
 const EventPage = ({ data, children }) => {
    console.log("EventPage (data): ", data);
@@ -8,9 +8,7 @@ const EventPage = ({ data, children }) => {
 
    return (
       <Layout>
-         <h1>
-            {data.mdx.frontmatter.eventName} {data.mdx.frontmatter.year}{" "}
-         </h1>
+         <h1>{data.mdx.frontmatter.globalPage}</h1>
          {children}
       </Layout>
    );
@@ -25,20 +23,18 @@ export const eq = graphql`
       }
       mdx(id: { eq: $id }) {
          frontmatter {
-            eventDate(formatString: "MMMM D, YYYY")
-            eventName
-            eventYear
-            year: eventDate(formatString: "YYYY")
+            globalPage
          }
          id
+         body
+         url: gatsbyPath(filePath: "/{mdx.frontmatter__globalPage}")
       }
    }
 `;
 
 export const Head = ({ data }) => {
    <title>
-      {data.site.siteMetadata.title} - {data.mdx.frontmatter.eventName} -{" "}
-      {data.mdx.frontmatter.year}
+      {data.site.siteMetadata.title} - {data.mdx.frontmatter.globalPage}
    </title>;
 };
 

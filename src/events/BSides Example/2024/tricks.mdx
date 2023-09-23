@@ -1,0 +1,77 @@
+---
+eventName: BSides Example
+eventDate: 2024-12-01
+eventYear: 2024
+eventPage: Tricks
+---
+
+#### Using Images
+
+{/* path in this event, can also be ../images for images used in all BSides Example events */}
+{/* or ./images/ if you want to keep images in a subdirectory here */}
+import bsidesLogo from "./bsides_logo.png";
+
+{/* if you want to pull from the site images, you can reference by path */}
+{/* though I think there might be a cleaner way to magic this. */}
+import bsidesCommonLogo from "../../../images/bsides_logo.png";
+
+Or a similar method to include images (these are from 2 different sources)
+
+```markdown
+import bsidesLogo from "./bsides_logo.png";
+import bsidesCommonLogo from "../../../images/bsides_logo.png";
+
+<img src={bsidesLogo} />
+<img src={bsidesCommonLogo} />
+![BSides logo](./bsides_logo.png)
+```
+
+<img src={bsidesLogo} alt="BSides logo" />
+<img src={bsidesCommonLogo} alt="BSides logo" />
+![BSides logo](./bsides_logo.png)
+
+Generally, please do not hard code a path into a tag, it will fail silently and we want errors to be loud.
+We are still in heavy development and things may move around, so if we do move something you rely on, we want
+to know asap so we can make a fix.
+
+<hr />
+#### Adding pages to your event
+
+In the frontmatter at the top of the page, include a new field:
+
+`eventPage`
+
+-  this will go through some weird slugification, so keep it simple and the slugification will also be simple
+-  notice this page has an 'eventPage' of "Tricks" but the url path is "tricks", slugification makes everything lower case
+-  this is appended to the page title, without going through slugification
+
+Once you have this set, you can use `Link` from Gatsby to provide navigation between your pages. This is how we have
+the pages for the example set up:
+
+```jsx
+import {Link} from "gatsby";
+
+<Link to={".."}> Main </Link>
+<Link to={"../page3"}>Page 3</Link>
+```
+
+**NOTE:** If you don't know where something is, if you are running the develop server and go to a non-existent page, it
+will show you all the available paths which might help you find the page(s) you're creating.
+
+<hr />
+#### Adding comments
+
+You might think one of the standard forms of comments for Javascript will work. // and /_ say that you're wrong :)
+For comments in mdx files you wrap a single line with `{/_ Your comment here \*/}`
+
+<hr />
+import {Link} from "gatsby";
+
+<ul>
+   <li>
+      <Link to={".."}>Event Page</Link>
+   </li>
+   <li>
+      <Link to={"../problems"}>Known Problems</Link>
+   </li>
+</ul>
