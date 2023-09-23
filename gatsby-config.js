@@ -43,7 +43,6 @@ module.exports = {
          },
          __key: "events",
       },
-      /*
       {
          resolve: `gatsby-source-filesystem`,
          options: {
@@ -51,6 +50,6 @@ module.exports = {
             path: `${__dirname}/src/global/`,
          },
          __key: "global",
-      }, /* */
+      } /* */,
    ],
 };
