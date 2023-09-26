@@ -39,12 +39,12 @@ to a new site.
    -  walk through the main principles of the site generator
    -  Any code standards we want to utilize
    -  PR template
--  [ ] Create the navigation from the the frontmatter in src/global
-   -  an idea on how to do it is in `src/global/contact update form.mdx`
 -  [ ] Create event navigation from the frontmatter in src/events
 
 ##### Completed
 
+-  [x] Create the navigation from the the frontmatter in src/global
+   -  an idea on how to do it is in `src/global/contact update form.mdx`
 -  [x] Create gh-pages publishing
 -  [x] Figure out the slugify renaming of the path vs the eventName
    -  ideally we'd prefer `/events/<eventName>/<year>`
@@ -138,3 +138,6 @@ Community:
 -  [ ] Determine approval team for PRs (may be the migration team + others)
 -  [ ] PR and Build/Deploy messages to Slack
 -  [ ] Create a page to show `src/events` md{x} files and the results of a set of checks on them to help events debug issues with their pages
+-  [ ] Non-slugified event paths (ex: /events/BSidesSF2024 instead of /events/b-sides-sf/2024).
+   -  the `[]` client only route might work for this
+   -  using `{}` with a lookup into an alias list and `navigateo` from @reach/router might also work
