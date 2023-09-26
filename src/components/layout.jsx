@@ -19,13 +19,14 @@ import bsidesLogo from "../images/bsides_logo.png";
 const Layout = ({ children }) => {
    return (
       <Container>
-         <Navbar expand="lg" className="bg-body-tertiary">
+         <Navbar expand="lg">
             <Navbar.Brand>
                <Link to="/">
                   <img
                      src={bsidesLogo}
                      className="d-inline-block align-top"
                      alt="Security BSides logo"
+                     style={{ height: "35px" }}
                   />
                </Link>
             </Navbar.Brand>
@@ -34,8 +35,12 @@ const Layout = ({ children }) => {
                <Nav className="me-auto">
                   <GlobalNav />
                   <NavDropdown title="Events">
-                     <NavDropdown.Item href="">Map</NavDropdown.Item>
-                     <NavDropdown.Item href="">Upcoming</NavDropdown.Item>
+                     <NavDropdown.Item href="">
+                        <Link to="/map">Map</Link>
+                     </NavDropdown.Item>
+                     <NavDropdown.Item href="">
+                        <Link to="/cal">Upcoming</Link>
+                     </NavDropdown.Item>
                      <NavDropdown.Divider />
                      <NavDropdown.Item>
                         <Link to={"/events/"}>The Full List</Link>
