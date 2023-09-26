@@ -59,7 +59,7 @@ const GlobalNav = () => {
                      .map((entry) => {
                         return (
                            <NavDropdown.Item key={header + entry.id}>
-                              <Link to="{entry.gatsbyPath">
+                              <Link to={entry.gatsbyPath}>
                                  {entry.frontmatter.nav.text}
                               </Link>
                            </NavDropdown.Item>
