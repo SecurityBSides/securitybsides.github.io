@@ -26,8 +26,6 @@ export const eq = graphql`
             globalPage
          }
          id
-         body
-         url: gatsbyPath(filePath: "/{mdx.frontmatter__globalPage}")
       }
    }
 `;
