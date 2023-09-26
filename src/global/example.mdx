@@ -1,0 +1,30 @@
+---
+globalPage: Example
+nav:
+   head: General
+   text: Example Page
+   priority: 100
+---
+
+This is an example page in the global space. Currently this is needed so graphql will find the right headings.
+
+Once we have real content, a lot of this should be moved into a README or CONTRIBUTING.
+
+To create a new page in the global space, put it in `/global` and use the following fields for frontmatter:
+
+```yaml
+globalPage: Page Name
+nav:
+   head: NavHeading
+   test: Link text
+   priority: Importance / Sorting
+```
+
+-  GlobalPage is what triggers this to be created by `{mdx.frontmatter__globalPage}.jsx` in `/pages`.
+-  nav is a heading or navigation information, where should this page be added to the navigation bar
+-  head indicates which heading to add this page under. Right now the pre-defined options are:
+   -  General - General Articles
+   -  Contact - Ways of contact
+   -  How To - Instructions
+-  text is what will be displayed for the link text.
+-  priority specifies how far up the list it should be placed. Items of equal priority will not have a guaranteed order.
