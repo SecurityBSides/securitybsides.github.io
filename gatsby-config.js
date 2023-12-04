@@ -2,6 +2,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
+
 module.exports = {
    siteMetadata: {
       title: `Security BSides`,
@@ -21,7 +22,7 @@ module.exports = {
             ],
             mdxOptions: {
                // remark-gfm has to stay at v ^1 due to ESM for gatsby-plugin-mdx 5.3
-               remarkPlugins: [require(`remark-gfm`)],
+	       remarkPlugins: [{resolve: `remarkGfm`}],
                rehypePlugins: [
                   // [require(`module`),{"option": "value"}],
                ],
