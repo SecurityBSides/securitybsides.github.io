@@ -1,36 +1,50 @@
-# How to Contribute to our site:
+# How to Contribute:
 
-Note: This is a work in progress
+## General Information
 
-## Event Addition(s)
+-  We're using Gatsby v5, with some customized pages
+-  We're using NodeJS v20.\*
+-  Events are all created from `./src/events`
+-  Global site pages are created from `./src/global`
+-  Site generation, major changes to structure, etc is created from `./src/pages`
 
-ToDo: Write the details of how to add an event
+#### Notes
 
-## General Notes
+-  Since we are using Gatsby v5, this also means we're using gatsby-plugin-mdx. Be careful when looking at documentation as the previous method of gatsby-plugin-allRemarkDown (or similar) is quite different.
+-  We're using NodeJS version 20+, it's in the .nvmrc file for nvm users. Otherwise make sure you are using the right version of NodeJS or there will be a lot of errors.
 
-ToDo: Write the details of general notes about this site
+## Development Pattern
 
--  We're using Gatsby, so feel free to use all of the documents
-   -  In Gatsby, we are using v5, which also means gatsby-plugin-mdx NOT allRemarkDown or others so use that as a filter to what you study about Gatsby
+This pattern should be used for all updates to the site, whether it is adding new events or updating the global pages. There will be some access provided to core site maintainers who may PR directly from this repository.
 
-## Global Site Updates
+-  fork this repo (if you haven't already)
+-  clone from your fork
+-  verify node version 20.\*
+-  yarn install
+-  yarn run develop
+-  make and view changes in the local development site
+-  commit and push changes to your fork, ideally squashed (discrete, small, atomic changes are faster to review)
+-  PR to the main repository
 
-ToDo: Write how to set up environment, test, and PR changes for the global org
+Please see the relevant Contributing sub-page for the types of updates you want to:
 
-# Setting up dev environment
+-  Adding your event(s) to the site, please see [Contributing.Events](Contributing.Events.md)
+-  Updating the global site pages and information, please see [Contribting.Global](Contributing.Global.md)
 
--  Use nvm, and install and use the node version found in .nvmrc
+## Below this point is only for altering how the site is created
 
-### Common Problems
+If you are working on how the site is generated, the following information is for you.
 
--  Use the right version of node. `nvm use` in the top level directory of look at .nvmrc and confirm it matches `node --version`.
+### Creating a new Page - extending the site
 
-> ⠙ compile gatsby files
-> /var/folders/02/5mjm648d0qb9pds9vfl37xmw0000gn/T/yarn--1694998202944-0.17981192331085394/node: line 3: 69903 Segmentation fault: 11 "/Users/luwenth/.nvm/versions/node/v18.17.1/bin/node" "$@"
+1. Create the file in /src/pages
+1. Import `import * as React from 'react'`
+1. Define component
+1. Export component
+1. Use component
 
-This usually mans there are some " where there should be ``` in your gatsby-config.js. Check whatever you just added before the segmentation fault started.
-
-## Notes
+The main philosophy of Gatsby is that all of the content, frontmatter and mdx bodies, is imported into the gatsby graphql.
+This means you can use the development \_\_graphql playground to query anything that gatsby has found and included.
 
 ### Useful Queries:
 
@@ -50,12 +64,3 @@ query MyQuery {
    }
 }
 ```
-
-### Page Component
-
-3 things for a Page component (see Part 2):
-
-1. Create the file in /src/pages
-1. Import `import * as React from 'react'`
-1. Define component
-1. Export component
