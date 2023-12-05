@@ -17,15 +17,13 @@ module.exports = {
          options: {
             extensions: [".mdx", ".md"],
             gatsbyRemarkPlugins: [
-               // { resolve: `remark-gfm` },
                { resolve: `gatsby-remark-images`, options: { maxWidth: 1200 } },
             ],
             mdxOptions: {
                // remark-gfm has to stay at v ^1 due to ESM for gatsby-plugin-mdx 5.3
-	       remarkPlugins: [{resolve: `remarkGfm`}],
-               rehypePlugins: [
-                  // [require(`module`),{"option": "value"}],
-               ],
+	       remarkPlugins: [
+               { resolve: `remark-gfm` },], 
+               rehypePlugins: [ ], 
             },
          },
       },

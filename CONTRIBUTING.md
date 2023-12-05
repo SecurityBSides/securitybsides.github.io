@@ -28,8 +28,8 @@ This pattern should be used for all updates to the site, whether it is adding ne
 
 Please see the relevant Contributing sub-page for the types of updates you want to:
 
--  Adding your event(s) to the site, please see [Contributing.Events](Contributing.Events.md)
--  Updating the global site pages and information, please see [Contribting.Global](Contributing.Global.md)
+-  Adding your event(s) to the site, please see [Contributing.Events](CONTRIBUTING.Events.md)
+-  Updating the global site pages and information, please see [Contribting.Global](CONTRIBUTING.Global.md)
 
 ## Below this point is only for altering how the site is created
 
