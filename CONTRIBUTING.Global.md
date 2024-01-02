@@ -23,7 +23,7 @@ globalPage: contact update form
 convertDate: 2023-09-28 09:09
 nav:
    head: TBD
-   text: contact update form
+   title: contact update form
    priority: 0
 ---
 # Page title
@@ -41,8 +41,26 @@ Content
    -  text: the nav text to get to this page
    -  priority: what order under the heading does this page receive (0 is the top, more positive is further down)
 
+## Automated Conversion (via script)
+
+There is a generic conversion script to turn a global page from HTML markdown to MDX.
+
+Script is: ./scripts/convertGlobal.mjs
+Usage is
+
+After you've done the conversion with the script, you may also need to do the following, if you get errors on your newly created files.
+
+Manually: Escape any { characters found in the input file, which are not being used for `{/*` comment markers
+Manually: Rewrite `<URL>` to `[URL](URL)` format (this is a known Gatsby/MDXv2 issue)
+
+Finally, decide what header it belongs under, and perhaps which order it should be in the navigation.
+Update the nav portion of the header, and verify everything ended where you expected.
+
 ### Notes
 
 ##### Linking between global pages
 
-In your mdx file you want to link to another global page. In order to do this, you might think doing something like `[page](location)` would be the way to go. However, pages go through a slugification process to create their path. To make the reference end up where you want it, you should use `Link to={./File} />`. When you do this Gatsby should do the magic to figure out where that file ended up. (This needs testing and better documentation if wrong.)
+In your mdx file you want to link to another global page. In order to do this, you might think doing something like `[page](location)`
+would be the way to go. However, pages go through a slugification process to create their path. To make the reference end up where you want it, you
+should use `<Link to={./File}>Text</Link>`. When you do this Gatsby should do the magic to figure out where that file ended up. (This needs testing
+and better documentation if wrong.)
