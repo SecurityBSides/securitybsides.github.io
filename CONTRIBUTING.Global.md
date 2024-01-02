@@ -60,4 +60,7 @@ Update the nav portion of the header, and verify everything ended where you expe
 
 ##### Linking between global pages
 
-In your mdx file you want to link to another global page. In order to do this, you might think doing something like `[page](location)` would be the way to go. However, pages go through a slugification process to create their path. To make the reference end up where you want it, you should use `Link to={./File} />`. When you do this Gatsby should do the magic to figure out where that file ended up. (This needs testing and better documentation if wrong.)
+In your mdx file you want to link to another global page. In order to do this, you might think doing something like `[page](location)`
+would be the way to go. However, pages go through a slugification process to create their path. To make the reference end up where you want it, you
+should use `<Link to={./File}>Text</Link>`. When you do this Gatsby should do the magic to figure out where that file ended up. (This needs testing
+and better documentation if wrong.)
