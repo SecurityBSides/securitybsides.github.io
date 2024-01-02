@@ -23,7 +23,7 @@ globalPage: contact update form
 convertDate: 2023-09-28 09:09
 nav:
    head: TBD
-   text: contact update form
+   title: contact update form
    priority: 0
 ---
 # Page title
@@ -40,6 +40,21 @@ Content
    -  head: Top level header this page goes under
    -  text: the nav text to get to this page
    -  priority: what order under the heading does this page receive (0 is the top, more positive is further down)
+
+## Automated Conversion (via script)
+
+There is a generic conversion script to turn a global page from HTML markdown to MDX.
+
+Script is: ./scripts/convertGlobal.mjs
+Usage is
+
+After you've done the conversion with the script, you may also need to do the following, if you get errors on your newly created files.
+
+Manually: Escape any { characters found in the input file, which are not being used for `{/*` comment markers
+Manually: Rewrite `<URL>` to `[URL](URL)` format (this is a known Gatsby/MDXv2 issue)
+
+Finally, decide what header it belongs under, and perhaps which order it should be in the navigation.
+Update the nav portion of the header, and verify everything ended where you expected.
 
 ### Notes
 
